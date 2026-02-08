@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Riana | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">Riana</div>
+
+  <div class="nav-right">
+    <ul class="nav-menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+    </ul>
+
+    <button id="darkToggle">🌙</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Riana</h1>
+  <p>Pelajar SMK | Digital Drawing & Design</p>
+</section>
+
+<div class="container">
+
+  <div class="about fade-in" id="about">
+    <h2>About Me</h2>
+    <p>Saya merupakan siswa kelas X RPL yang memiliki minat di bidang coding dan desain</p>
+  </div>
+
+  <div class="portfolio fade-in" id="works">
+    <h2>My Works</h2>
+
+    <div class="portfolio-cards">
+      <div class="card">
+        <h3>Design</h3>
+        <p>Digital drawing dan desain poster</p>
+      </div>
+
+      <div class="card">
+        <h3>Coding</h3>
+        <p>Website sederhana menggunakan HTML & CSS</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="floating-icons">
+  <a href="mailto:riana.laksmi88@email.com" class="float-btn email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <a href="https://wa.me/6282144890118" class="float-btn wa" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <a href="https://instagram.com/lunafamilia1036" class="float-btn ig" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+</div>
+
+<script>
+  const toggle = document.getElementById("darkToggle");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });
+</script>
+
+<footer class="footer">
+  <p>© 2026 Riana. Built with HTML & CSS.</p>
+</footer>
+
+</body>
+
+</html>
