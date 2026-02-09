@@ -30,7 +30,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <h1 class="hero-title">Hai, aku Riana 👋</h1>
+  <h1 class="hero-title">Hello! I'm Riana (⁠≧⁠▽⁠≦⁠)/</h1>
   <p class="hero-sub">
     <span id="typing"></span>
   </p>
@@ -47,7 +47,7 @@
 
 <div class="container">
 
-  <section class="about fade-in" id="about">
+ <section class="about scroll-fade" id="about">
     <h2>About Me</h2>
     <p>
       Saya merupakan siswa kelas X RPL yang memiliki minat
@@ -55,22 +55,62 @@
     </p>
   </section>
 
-  <section class="portfolio fade-in" id="works">
+  <section class="portfolio scroll-fade" id="works">
     <h2>My Works</h2>
 
-    <div class="portfolio-cards">
-      <div class="card fade-in">
-        <h3>Design</h3>
-        <p>Digital drawing & poster design</p>
-      </div>
+   <div class="portfolio-cards">
 
-      <div class="card fade-in">
-        <h3>Coding</h3>
-        <p>Website sederhana HTML & CSS</p>
-      </div>
-    </div>
+  <div class="card fade-in">
+    <h3>Website Portfolio</h3>
+    <p>
+      Website personal menggunakan HTML & CSS dengan fitur
+      dark mode, animasi, dan responsive design.
+    </p>
+    <small>HTML • CSS</small>
+  </div>
+
+  <div class="card fade-in">
+    <h3>UI Design</h3>
+    <p>
+      Desain UI sederhana untuk website dan poster digital
+      menggunakan prinsip warna dan layout.
+    </p>
+    <small>Design • Visual</small>
+  </div>
+
+  <div class="card fade-in">
+    <h3>Game Quiz Scratch</h3>
+    <p>
+      Game kuis edukasi sederhana menggunakan Scratch
+      untuk melatih logika dan interaksi pengguna.
+    </p>
+    <small>Scratch • Logic</small>
+  </div>
+
+  <div class="card fade-in">
+    <h3>Latihan Coding</h3>
+    <p>
+      Kumpulan latihan HTML & CSS seperti navbar,
+      button animasi, dan layout responsive.
+    </p>
+    <small>Practice • Learning</small>
+  </div>
+
+</div>
+
   </section>
 
+</div>
+<div class="floating-icons">
+  <a href="mailto:riana.laksmi88@email.com" class="float-btn email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/6282144890118" class="float-btn wa">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="https://instagram.com/lunafamilia1036" class="float-btn ig">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
 </div>
 
 <footer class="footer">
@@ -84,14 +124,24 @@ darkToggle.onclick = () => {
 };
 
 /* SCROLL ANIMATION */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+const elements = document.querySelectorAll(".scroll-fade");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    },
+    {
+      threshold: 0.15
     }
-  });
-});
-document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+  );
+
+  elements.forEach((el) => observer.observe(el));
 
 /* TYPING EFFECT */
 const text = "Pelajar SMK RPL | Web Development | UI Design";
