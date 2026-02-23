@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Riana | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">Riana</div>
+
+  <div class="nav-right">
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+    </ul>
+
+    <button id="darkToggle">🌙</button>
+    <button class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="hero-title">Hello! I'm Riana (⁠≧⁠▽⁠≦⁠)/</h1>
+  <p class="hero-sub">
+    <span id="typing"></span>
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#about" class="btn-outline">
+      <i class="fa-solid fa-user"></i> About Me
+    </a>
+    <a href="#works" class="btn">
+      <i class="fa-solid fa-code"></i> My Works
+    </a>
+  </div>
+</section>
+
+<div class="container">
+
+ <section class="about scroll-fade" id="about">
+    <h2>About Me</h2>
+    <p>
+      Saya merupakan siswa kelas X RPL yang memiliki minat
+      di bidang coding dan desain.
+    </p>
+  </section>
+
+  <section class="portfolio scroll-fade" id="works">
+    <h2>My Works</h2>
+
+   <div class="portfolio-cards">
+
+  <div class="card fade-in">
+    <h3>Website Portfolio</h3>
+    <p>
+      Website personal menggunakan HTML & CSS dengan fitur
+      dark mode, animasi, dan responsive design.
+    </p>
+    <small>HTML • CSS</small>
+  </div>
+
+  <div class="card fade-in">
+    <h3>UI Design</h3>
+    <p>
+      Desain UI sederhana untuk website dan poster digital
+      menggunakan prinsip warna dan layout.
+    </p>
+    <small>Design • Visual</small>
+  </div>
+
+  <div class="card fade-in">
+    <h3>Game Quiz Scratch</h3>
+    <p>
+      Game kuis edukasi sederhana menggunakan Scratch
+      untuk melatih logika dan interaksi pengguna.
+    </p>
+    <small>Scratch • Logic</small>
+  </div>
+
+  <div class="card fade-in">
+    <h3>Latihan Coding</h3>
+    <p>
+      Kumpulan latihan HTML & CSS seperti navbar,
+      button animasi, dan layout responsive.
+    </p>
+    <small>Practice • Learning</small>
+  </div>
+
+</div>
+
+  </section>
+
+</div>
+<div class="floating-icons">
+  <a href="mailto:riana.laksmi88@email.com" class="float-btn email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/6282144890118" class="float-btn wa">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="https://instagram.com/lunafamilia1036" class="float-btn ig">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+</div>
+
+<footer class="footer">
+  © 2026 Riana — Built with HTML & CSS
+</footer>
+
+<script>
+/* DARK MODE */
+darkToggle.onclick = () => {
+  document.body.classList.toggle("dark");
+};
+
+/* SCROLL ANIMATION */
+const elements = document.querySelectorAll(".scroll-fade");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+
+/* TYPING EFFECT */
+const text = "Pelajar SMK RPL | Web Development | UI Design";
+let i = 0;
+function typing() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 60);
+  }
+}
+typing();
+
+/* HAMBURGER */
+hamburger.onclick = () => {
+  navMenu.classList.toggle("active");
+};
+</script>
+
+</body>
+</html>
